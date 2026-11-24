@@ -18,7 +18,7 @@ every morning.
 
 ## What I built and run
 
-**1. The ingestion platform: 80+ Airflow DAG families on Cloud Composer.**
+**1. The ingestion platform: a team-built estate of 80+ Airflow DAG families on Cloud Composer, which I help maintain and extend.**
 - Connectors for SSP / ad-server / analytics APIs (including asynchronous "request → poll → download" report APIs),
   GA4 custom events, web-vitals/CrUX, ads.txt and page-quality crawlers.
 - Loads into partitioned BigQuery tables with idempotent per-day merges, so backfills and retries never duplicate revenue.
