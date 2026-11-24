@@ -12,7 +12,9 @@ can starve the scheduler, and an upgrade can break dozens of DAGs at once.
 ## What was built
 
 **Environment migration (Airflow 2.6 → 2.11, new Composer generation).**
-- Stood up the new environment alongside the old one and migrated DAGs in batches.
+- **Zero downtime:** stood up the new environment alongside the old one, deployed a duplicate of every DAG there
+  paused, then switched them over one by one (enable in the new environment, pause in the old), so every pipeline
+  stayed live throughout.
 - Rebuilt the dependency set for the new image. Some provider packages that the Airflow constraints file lists are
   not pre-installed in the image and had to be pinned explicitly.
 - Split deployment: a Cloud Build pipeline rsyncs `dags/` to the environment bucket, while a private secrets-client
@@ -37,5 +39,3 @@ can starve the scheduler, and an upgrade can break dozens of DAGs at once.
 
 The conventions (timeouts, retries, owners, fast-parsing DAGs, DAG-integrity tests in CI, deployment via Workload
 Identity Federation) are in [gcp-data-platform-template](https://github.com/thanzap/gcp-data-platform-template).
-
-[TODO: e.g. "failed-task alerts down from ~X/day to one digest", "migration with N hours downtime"]

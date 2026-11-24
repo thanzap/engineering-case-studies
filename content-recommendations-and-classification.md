@@ -41,4 +41,4 @@ flowchart LR
 - Classification became incremental and was hardened against translation-API rate limits, then the translation step moved to Gemini.
 - Both pipelines moved to the new Composer environment with Terraform-defined resources.
 
-**Results:** [TODO: sites covered, articles classified/day, widget CTR if known]
+**Scale:** the widget runs on **~20 publisher sites**, and **~600 new articles** are classified a day.

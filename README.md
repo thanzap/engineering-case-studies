@@ -9,7 +9,7 @@ from-scratch versions of the core patterns.
 | Case study | Domain | Highlights |
 |---|---|---|
 | [Ad-tech data platform & AI revenue triage](ad-tech-data-platform.md) | Programmatic advertising | Composer/Airflow estate, BigQuery, an ADK agent on Agent Runtime that triages revenue anomalies and answers questions over the warehouse and DAGs |
-| [BI, billing automation & AI support QA](saas-bi-and-automation.md) | B2B SaaS + hardware | Company warehouse, billing/CRM/shipping automations, a ticket-QA agent |
+| [Data warehouse, billing automation & AI support tooling](saas-bi-and-automation.md) | B2B SaaS + hardware | Company warehouse, billing/CRM/shipping automations, a ticket-QA agent, a support portal |
 
 ### Data engineering deep-dives
 

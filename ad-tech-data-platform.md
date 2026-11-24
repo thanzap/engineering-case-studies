@@ -1,6 +1,6 @@
 # Ad-tech data platform and AI revenue triage
 
-**Role:** AI/Data Engineer · **2022–present** · European programmatic advertising network (publisher monetisation)
+**Domain:** European programmatic advertising network (publisher monetisation)
 **Stack:** GCP (Cloud Composer/Airflow, BigQuery, Cloud Functions, Cloud Run, Cloud Build, GCS, Secret Manager), Python,
 SQL, Terraform, Google ADK + Gemini on Agent Runtime, Looker Studio
 

@@ -44,5 +44,3 @@ flowchart LR
 - Chunks follow the page's heading structure, so every hit maps to a section a human can open.
 - Embedding calls are batched by count and by a character budget, staying under the model's per-request limit.
 - The index refreshes on a schedule, and the agent's search tool returns the URL and heading of each passage for citations.
-
-**Results:** [TODO: e.g. "MRR history now covers N months beyond the API window", "support agent answers grounded in N doc sections"]
