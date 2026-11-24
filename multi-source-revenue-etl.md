@@ -1,10 +1,10 @@
-# Unifying revenue from 70+ demand partners
+# Unifying revenue from ~20 demand partners
 
 **Domain:** programmatic advertising · **Stack:** Airflow (Cloud Composer), Python, pandas, BigQuery, Google Sheets as a config UI, Gmail API, partner REST/report APIs
 
 ## Problem
 
-A publisher network earns money through dozens of demand partners: SSPs, ad exchanges, video and native platforms,
+An ad network earns money for its ~70 publishers through ~20 demand partners: SSPs, ad exchanges, video and native platforms,
 header-bidding wrappers and the ad server itself. Each partner delivers revenue differently:
 
 - REST APIs (some synchronous, some "request a report → poll → download")
@@ -58,6 +58,6 @@ flowchart LR
 - Email-report back-fill logic, and a reconciliation query that reads each partner's raw revenue column.
 - Credentials rotated and tokens moved out of code.
 
-**Scale:** ~75 partner source modules. [TODO: rows/day, € revenue/month reconciled]
+**Scale:** ~20 demand partners and ~75 source modules (APIs, emailed reports, ad-server exports), for ~70 publishers.
 
 **Public version of the core patterns:** [gcp-data-platform-template](https://github.com/thanzap/gcp-data-platform-template)

@@ -8,18 +8,17 @@ from-scratch versions of the core patterns.
 
 | Case study | Domain | Highlights |
 |---|---|---|
-| [Ad-tech data platform & AI revenue triage](ad-tech-data-platform.md) | Programmatic advertising | Composer/Airflow estate, BigQuery, an ADK agent on Agent Runtime triaging revenue anomalies |
+| [Ad-tech data platform & AI revenue triage](ad-tech-data-platform.md) | Programmatic advertising | Composer/Airflow estate, BigQuery, an ADK agent on Agent Runtime that triages revenue anomalies and answers questions over the warehouse and DAGs |
 | [BI, billing automation & AI support QA](saas-bi-and-automation.md) | B2B SaaS + hardware | Company warehouse, billing/CRM/shipping automations, a ticket-QA agent |
 
 ### Data engineering deep-dives
 
 | Case study | What it shows |
 |---|---|
-| [Unifying revenue from 70+ demand partners](multi-source-revenue-etl.md) | Raw-first multi-source ETL (APIs, emailed reports, ad-server exports), mapping-driven transforms, raw ↔ transformed reconciliation, unmapped-inventory checks |
+| [Unifying revenue from ~20 demand partners](multi-source-revenue-etl.md) | Raw-first multi-source ETL (APIs, emailed reports, ad-server exports), mapping-driven transforms, raw ↔ transformed reconciliation, unmapped-inventory checks |
 | [Web analytics pipelines & reconciliation](web-analytics-pipelines.md) | GA4 Data API + BigQuery export across accounts, ETL vs GA4 vs tag reconciliation, freshness and definition bugs |
 | [Content recommendations & contextual classification](content-recommendations-and-classification.md) | Incremental NLP classification (IAB taxonomy, sentiment, Gemini translation), recommendation pipeline served via Firestore/CDN |
 | [Running a large Airflow estate](airflow-platform-operations.md) | Composer migration (Airflow 2.6 → 2.11), self-healing queue, failed-task digests, metadata cleanup, CI/CD |
-| [Revenue forecasting per publisher](revenue-forecasting.md) | Weekly/monthly Prophet models per publisher, input cleaning, business-aware horizons |
 | [SaaS revenue history & RAG on BigQuery](saas-revenue-data-and-rag.md) | Snapshot + MERGE ledger to outlive a 90-day API window; docs chunking + embeddings with BigQuery vector search |
 
 **Public companion repositories**

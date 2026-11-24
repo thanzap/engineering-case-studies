@@ -5,7 +5,7 @@ Secret Manager, Python
 
 ## Context
 
-The team's data platform runs 80+ DAG families: partner ETL, analytics, forecasting, recommendations, monitoring.
+The team's data platform runs 80+ DAG families: partner ETL, analytics, recommendations, monitoring.
 They share one Composer environment. With that many pipelines, platform health is its own job: a single stuck task
 can starve the scheduler, and an upgrade can break dozens of DAGs at once.
 

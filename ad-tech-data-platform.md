@@ -1,6 +1,6 @@
 # Ad-tech data platform and AI revenue triage
 
-**Role:** Data Engineer → [TODO: current title] · **2022–present** · European programmatic advertising network (publisher monetisation)
+**Role:** AI/Data Engineer · **2022–present** · European programmatic advertising network (publisher monetisation)
 **Stack:** GCP (Cloud Composer/Airflow, BigQuery, Cloud Functions, Cloud Run, Cloud Build, GCS, Secret Manager), Python,
 SQL, Terraform, Google ADK + Gemini on Agent Runtime, Looker Studio
 
@@ -11,8 +11,8 @@ SQL, Terraform, Google ADK + Gemini on Agent Runtime, Looker Studio
 
 ## Context
 
-An ad network earns its revenue across dozens of demand partners (SSPs, ad exchanges, video platforms) on behalf of
-[TODO: N] publishers. Every partner reports differently, on its own schedule, in its own currency and taxonomy.
+An ad network earns its revenue across ~20 demand partners (SSPs, ad exchanges, video platforms) on behalf of
+~70 publishers. Every partner reports differently, on its own schedule, in its own currency and taxonomy.
 Publisher payouts, sales decisions and day-to-day ad-ops all depend on one trustworthy revenue picture, available
 every morning.
 
@@ -24,21 +24,24 @@ every morning.
 - Loads into partitioned BigQuery tables with idempotent per-day merges, so backfills and retries never duplicate revenue.
 - Ran the migration of the whole DAG estate between Composer generations (Airflow 2.6 → 2.11), including dependency
   pinning for the new image and a Cloud Build deployment pipeline that syncs DAGs to the environment.
-- [TODO: volume, e.g. "~X M rows/day across Y partners", "€Z revenue/month reported through the platform"]
+- Revenue from ~20 SSPs and ad exchanges, for ~70 publishers, lands in one unified table every morning.
 
-**2. Revenue anomaly detection with AI triage.**
+**2. Revenue anomaly detection and an AI BI agent.**
 - Daily detection of publisher-level revenue and ad-density anomalies against same-weekday baselines, with a
   drill-down report per incident.
-- Built an **ADK agent (Gemini) deployed on Agent Runtime** with read-only tools over the warehouse, pipeline status,
-  logs and a written spec of the revenue data flow. It triages each anomaly (real demand change vs. data gap vs.
-  single-partner outage) and writes the explanation into the morning email.
+- An **ADK agent (Gemini) deployed on Agent Runtime** with read-only tools over BigQuery, Airflow (DAG code, run
+  status, logs) and a written spec of the revenue data flow. It works in two modes:
+  - **Daily triage:** classifies each anomaly (real demand change vs. data gap vs. single-partner outage) and writes
+    the explanation into the morning email.
+  - **Ask the data:** answers ad-hoc questions in plain language, such as "why did this site drop yesterday?" or
+    "which DAG loads this partner, and did it run?", by querying the warehouse and scanning DAGs, logs and lineage.
 - Key design decision: evidence gathering and the first classification are **deterministic code**. The LLM only
   explains. An earlier version that let the model loop over sites skipped and misclassified sites, and moving the
   logic into tools made it reliable. The agent is optional: if it fails or times out, the email ships unchanged.
-- [TODO: impact, e.g. "time to root cause from ~X h to Y min", "N false alarms/week avoided"]
+- **Impact:** finding why revenue moved used to mean opening each publisher's chart and digging through the
+  differences by hand. Now the morning email lists only the significant moves, each with its likely cause.
 
-**3. Forecasting, pricing and recommendations.**
-- Revenue forecasting pipelines (Prophet and weekly-seasonality methods) used for [TODO: planning / publisher payouts].
+**3. Pricing and recommendations.**
 - Floor-price and CPC optimisation analyses; contextual-advertising and article recommendation-system pipelines.
 
 **4. Reliability and governance.**
