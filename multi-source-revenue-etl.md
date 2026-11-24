@@ -51,13 +51,12 @@ flowchart LR
 - **No poisoned queues.** Removed `depends_on_past` from the QA tasks, so a single bad day no longer blocks every
   following day until someone intervenes.
 
-## My part
+## Ongoing work
 
-I've been one of the main maintainers of this ETL for several years. Work I did includes:
-- Integrating new partners end to end: connector, raw schema, mapping, unmapped-checker coverage.
-- Fixing breakages when partners change their APIs or report formats (renamed metrics, new export layouts).
-- Building the email-report back-fill logic and the reconciliation query that reads each partner's raw revenue column.
-- Rotating credentials and moving tokens out of code.
+- New partners integrated end to end: connector, raw schema, mapping, unmapped-checker coverage.
+- Breakages fixed when partners change their APIs or report formats (renamed metrics, new export layouts).
+- Email-report back-fill logic, and a reconciliation query that reads each partner's raw revenue column.
+- Credentials rotated and tokens moved out of code.
 
 **Scale:** ~75 partner source modules. [TODO: rows/day, € revenue/month reconciled]
 

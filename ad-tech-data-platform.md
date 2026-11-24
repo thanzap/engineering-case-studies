@@ -4,7 +4,7 @@
 **Stack:** GCP (Cloud Composer/Airflow, BigQuery, Cloud Functions, Cloud Run, Cloud Build, GCS, Secret Manager), Python,
 SQL, Terraform, Google ADK + Gemini on Agent Runtime, Looker Studio
 
-> Employer and client names are omitted and the source code is proprietary. This page covers the problems, the architecture and my part in it. A from-scratch public
+> Employer and client names are omitted and the source code is proprietary. This page covers the problems and the architecture. A from-scratch public
 > version of the core patterns lives in
 > [gcp-data-platform-template](https://github.com/thanzap/gcp-data-platform-template) and
 > [ad-revenue-anomaly-agent](https://github.com/thanzap/ad-revenue-anomaly-agent).
@@ -16,9 +16,9 @@ An ad network earns its revenue across dozens of demand partners (SSPs, ad excha
 Publisher payouts, sales decisions and day-to-day ad-ops all depend on one trustworthy revenue picture, available
 every morning.
 
-## What I built and run
+## What the platform does
 
-**1. The ingestion platform: a team-built estate of 80+ Airflow DAG families on Cloud Composer, which I help maintain and extend.**
+**1. The ingestion platform: 80+ Airflow DAG families on Cloud Composer.**
 - Connectors for SSP / ad-server / analytics APIs (including asynchronous "request → poll → download" report APIs),
   GA4 custom events, web-vitals/CrUX, ads.txt and page-quality crawlers.
 - Loads into partitioned BigQuery tables with idempotent per-day merges, so backfills and retries never duplicate revenue.
@@ -49,7 +49,7 @@ every morning.
   upstream table, by-design zeros in Looker formulas) and fixed them at the source: retries on the upstream DAG,
   earlier schedules, and documented checks for whoever is on call.
 
-## What I'd highlight in an interview
+## Key engineering themes
 
 - Designing for **re-runnability**: every load is a pure function of (day, source).
 - Putting **LLMs behind deterministic guardrails** in a revenue-critical workflow, with graceful degradation.

@@ -5,14 +5,14 @@
 Google ADK + Gemini on Agent Runtime; REST/webhook integrations with the company's billing, CRM, shipping,
 transactional-email, partner, banking and asset-management platforms
 
-> Employer and vendor names are omitted and the source code is proprietary. This page covers the problems, the architecture and my part in it.
+> Employer and vendor names are omitted and the source code is proprietary. This page covers the problems and the architecture.
 
 ## Context
 
 The company sells subscriptions and hardware. Revenue, customer and support data live in a dozen SaaS tools. The BI team owns
 the company warehouse, the dashboards every department uses, and a growing set of automations between those tools.
 
-## What I built and run
+## What the systems do
 
 **1. Company data warehouse and dashboards.**
 - Replication of billing (MRR, entitlements, ramps, features), CRM (deals, line items), marketplace and banking data
@@ -37,7 +37,7 @@ the company warehouse, the dashboards every department uses, and a growing set o
   Gemini client and restored service. Lesson recorded: agents need an eval harness in CI, not just uptime checks.
 - [TODO: impact, e.g. "100 % of tickets scored vs ~X % manual sample"]
 
-## What I'd highlight in an interview
+## Key engineering themes
 
 - Owning **revenue-touching automations** end to end: webhooks, idempotency, sandboxes, alerting.
 - Infrastructure as code for analytics (Terraform-managed scheduled queries and functions).

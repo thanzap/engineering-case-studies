@@ -29,7 +29,7 @@ flowchart LR
 - Builds a reconciliation table that puts ETL revenue, GA4 traffic and tag events side by side per site, day and
   device. The dashboard's RPM charts read from it.
 
-## Problems I fixed
+## Problems fixed
 
 | Symptom | Root cause | Fix |
 |---|---|---|
@@ -41,5 +41,5 @@ flowchart LR
 ## Takeaway
 
 Most "data is wrong" reports weren't ETL bugs. They came from **freshness and definition** issues: late exports,
-partial days, by-design zeros in dashboard formulas. I documented a first-response checklist (check day coverage,
+partial days, by-design zeros in dashboard formulas. A first-response checklist was documented (check day coverage,
 export freshness and formula windows before touching the ETL), which cut time spent chasing false alarms.

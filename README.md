@@ -1,7 +1,7 @@
 # Engineering case studies
 
-Write-ups of production systems I've built or worked on as part of data teams; each says what my part was. Employer, client and vendor names are omitted and the code
-itself is proprietary. Each one covers the problem, the architecture, the decisions I made, and links to public,
+Write-ups of production data systems I've worked on. Employer, client and vendor names are omitted and the code
+itself is proprietary. Each one covers the problem, the architecture, the key decisions, and links to public,
 from-scratch versions of the core patterns.
 
 ### Overviews

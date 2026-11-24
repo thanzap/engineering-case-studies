@@ -45,11 +45,4 @@ flowchart LR
 - Embedding calls are batched by count and by a character budget, staying under the model's per-request limit.
 - The index refreshes on a schedule, and the agent's search tool returns the URL and heading of each passage for citations.
 
-## My part
-
-I designed and built the MRR snapshot/ledger pipeline and the ramps replica, and the first version of the
-docs-embeddings indexer in BigQuery. A teammate built the support agent and evolved the indexer into the version its
-search tool uses today; I work on the agents around it (see the ticket-QA agent in
-[the SaaS overview](saas-bi-and-automation.md)).
-
-[TODO: e.g. "MRR history now covers N months beyond the API window", "support agent answers grounded in N doc sections"]
+**Results:** [TODO: e.g. "MRR history now covers N months beyond the API window", "support agent answers grounded in N doc sections"]

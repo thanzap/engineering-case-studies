@@ -9,7 +9,7 @@ The team's data platform runs 80+ DAG families: partner ETL, analytics, forecast
 They share one Composer environment. With that many pipelines, platform health is its own job: a single stuck task
 can starve the scheduler, and an upgrade can break dozens of DAGs at once.
 
-## What I built or ran
+## What was built
 
 **Environment migration (Airflow 2.6 → 2.11, new Composer generation).**
 - Stood up the new environment alongside the old one and migrated DAGs in batches.

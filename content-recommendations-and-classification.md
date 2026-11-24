@@ -35,11 +35,10 @@ flowchart LR
   domain never dominates consecutive slots. The pool was enlarged (to 20+ candidates) so enough valid items survive
   filtering.
 
-## My part
+## How it evolved
 
-I maintained and extended both pipelines: rebuilt the recommendation flow on the newer GA4-based input with the
-article filters, retired a deprecated recommender, made classification incremental, made it survive
-translation-API rate limits, and replaced the translation step with Gemini. I also moved it to the new Composer
-environment with Terraform-defined resources.
+- The recommendation flow was rebuilt on GA4-based input with the article filters, and a deprecated recommender was retired.
+- Classification became incremental and was hardened against translation-API rate limits, then the translation step moved to Gemini.
+- Both pipelines moved to the new Composer environment with Terraform-defined resources.
 
-[TODO: sites covered, articles classified/day, widget CTR if known]
+**Results:** [TODO: sites covered, articles classified/day, widget CTR if known]

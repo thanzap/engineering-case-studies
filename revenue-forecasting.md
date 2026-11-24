@@ -27,9 +27,4 @@ flowchart LR
 - **Business-aware horizon.** The number of weeks forecast per publisher can stop at a known departure date instead
   of a fixed horizon.
 
-## My part
-
-Maintained the forecasting DAGs on the platform: [TODO: what you changed, e.g. data cleaning, horizon logic,
-migration to the new Composer environment, accuracy tracking]
-
-[TODO: accuracy, e.g. "MAPE ~X % on 4-week horizon"]
+**Results:** [TODO: accuracy, e.g. "MAPE ~X % on 4-week horizon"]
